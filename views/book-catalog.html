@@ -10,7 +10,7 @@
 						<a href="#">{{book.title}}</a>
 					</h3>
 					<h5>by {{book.author}}</h5>
-					{{limitBy(trimHtml(book.description), 150)}} ...
+					{{book.description | trimHtml | limitBy:150}} ... 
 					<div>${{book.price.amount}}</div>
 				</div>
 			</div>
