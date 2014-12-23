@@ -22,12 +22,15 @@
 				<p class="lead blog-description">A good place to test the code</p>
 			</div>
 
-			<div class="row" ng-controller="RowController">
-				<div class="col-sm-8 blog-main">
-					<input ng-model="message" /><br/>
-					{{message}}<br/>
-					{{greeting}}
+			<div class="row">
+				<div class="col-sm-8 blog-main" ng-controller="ParentController">
+					<input ng-model="data.message" /><br/>
+					{{data.message}}<br/>
 
+					<div ng-controller="ChildController">
+						<input ng-model="data.message" /><br/>
+						{{data.message}}<br/>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -39,14 +42,13 @@
 		<script>
 		
 		var module = angular.module('sanbox', []);
-		module.controller('RowController', function($scope) {
-			$scope.message = 'Hi there';
-			$scope.greeting = '';
+		module.controller('ParentController', function($scope) {
+			$scope.data = {
+				message: 'Patent'
+			}
+		});
 
-			$scope.$watch('message', function(newValue, oldValue) {
-				console.log('new value is ', newValue);
-				$scope.greeting = 'Hi' + newValue; 
-			});
+		module.controller('ChildController', function($scope) {
 		});
 
 		</script>

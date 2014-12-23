@@ -1,4 +1,4 @@
-<div class="col-sm-8 blog-main" ng-controller="BooksController">
+<div class="col-sm-8 blog-main">
 	<ul class="book-list" >
 		<li ng-repeat="book in books">
 			<div class="media">
@@ -7,7 +7,7 @@
 				</a>
 				<div class="media-body">
 					<h3 class="media-heading book-title">
-						<a href="#">{{book.title}}</a>
+						<a href="#/books/{{book.isbn}}">{{book.title}}</a>
 					</h3>
 					<h5>by {{book.author}}</h5>
 					{{book.description | trimHtml | limitBy:150}} ... 

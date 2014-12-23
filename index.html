@@ -24,9 +24,7 @@
 				<p class="lead blog-description">Your door to another reality</p>
 			</div>
 
-			<div class="row">
-				<ng-include src="'views/book-catalog.html'"></ng-include>
-				<ng-include src="'views/sidebar.html'"></ng-include>
+			<div class="row" ng-view>
 			</div><!-- /.row -->
 
 		</div><!-- /.container -->
@@ -36,11 +34,16 @@
 		<script src="vnd/jquery/dist/jquery.min.js"></script>
 		<script src="vnd/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script src="vnd/angular/angular.js"></script>
+		<script src="vnd/angular-route/angular-route.js"></script>
 
 		<script src="js/data-small.js"></script>
 		<script src="js/app.js"></script>
 		<script src="js/controllers/BooksController.js"></script>
+		<script src="js/controllers/BookDetailsController.js"></script>
+		
 		<script src="js/filters/Filters.js"></script>
+
+		<script src="js/services/BookService.js"></script>
 
 	</body>
 </html>
